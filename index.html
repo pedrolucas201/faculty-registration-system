@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro de Alunos</title>
+
+</head>
+<body>
+
+<h1>Cadastro de Alunos</h1>
+
+<form id="studentForm">
+    <input type="text" id="name" placeholder="Nome" required>
+    <input type="number" id="age" placeholder="Idade" required>
+    <input type="text" id="course" placeholder="Curso" required>
+    <input type="text" id="cpf" placeholder="CPF" required>
+    <input type="date" id="birthdate" required>
+    <button type="submit">Adicionar Aluno</button>
+</form>
+
+<div>
+    <label for="sort">Ordenar por:</label>
+    <select id="sort">
+        <option value="name">Nome</option>
+        <option value="age">Idade</option>
+        <option value="course">Curso</option>
+        <option value="cpf">CPF</option>
+        <option value="birthdate">Data de Nascimento</option>
+    </select>
+    <input type="text" id="search" placeholder="Pesquisar">
+</div>
+
+<ul id="studentList"></ul>
+
+
+
+
+<script src="index.js"></script>
+
+</body>
+</html>

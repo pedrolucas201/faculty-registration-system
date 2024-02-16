@@ -1,0 +1,21 @@
+Funcionalidades Implementadas:
+
+1. Cadastro de alunos com nome, idade, curso, CPF e data de nascimento.
+2. Edição de informações de alunos, excluindo a capacidade de alterar CPF e número de matrícula.
+3. Exclusão de alunos com confirmação do usuário.
+4. Filtragem e ordenação da lista de alunos por nome, curso, CPF ou data de nascimento.
+
+Estilo e Design:
+
+Interface simples com paleta de cores em tons de azul sobre fundo preto (acredito que gera um conforto visual interessante).
+Estilização dos formulários e botões para boa legibilidade, usabilidade e praticidade.
+
+Conclusão:
+
+O sistema de cadastro de alunos desenvolvido permite gerenciar informações de alunos de forma eficiente e intuitiva. Apesar de sua simplicidade, oferece as funcionalidades necessárias para um sistema de cadastro básico e pode ser expandido conforme necessário. A ideia do projeto foi transformar o simples em algo estruturado e com potencial, creio que a estilização contribui bastante nisso.
+
+Dificuldades:
+
+À primeira vista? com certeza foi a filtragem e ordenação da lista de alunos por nome, curso, CPF ou data de nascimento, nunca tinha feito antes. Foi uma experiência legal e me fez ''quebrar'' bastante a cabeça.
+
+Aluno: Pedro Lucas Gomes da Silva.
