@@ -4,10 +4,10 @@
 :root {
     --primary-color: #007BFF; /* Azul */
     --secondary-color: #000000; /* Preto */
-    --background-color: #121212; /* Fundo escuro */
-    --text-color: #FFFFFF; /* Cor do texto */
-    --input-background: #1E1E1E; /* Fundo dos inputs */
-    --input-border: #444444; /* Borda dos inputs */
+    --background-color: #F4F4F9; /* Cor de fundo clara */
+    --text-color: #FFFFFF; /* Cor do texto para botões */
+    --input-background: #FFFFFF; /* Cor de fundo dos inputs */
+    --input-border: #CCCCCC; /* Cor da borda dos inputs */
     --hover-color: #0056b3; /* Azul escuro para hover */
 }
 
@@ -15,7 +15,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--background-color);
-    color: var(--text-color);
+    color: var(--secondary-color);
     margin: 0;
     padding: 0;
     display: flex;
@@ -39,13 +39,13 @@ form {
     border-radius: 10px;
     padding: 20px;
     width: 350px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 form label {
     display: block;
     margin-bottom: 5px;
-    color: var(--text-color);
+    color: var(--secondary-color);
     font-weight: bold;
 }
 
@@ -59,8 +59,6 @@ form button {
     border: 1px solid var(--input-border);
     box-sizing: border-box;
     font-size: 1em;
-    background-color: var(--input-background);
-    color: var(--text-color);
 }
 
 form input:focus,
@@ -92,7 +90,7 @@ div {
 div label {
     display: block;
     margin-bottom: 5px;
-    color: var(--text-color);
+    color: var(--secondary-color);
     font-weight: bold;
 }
 
@@ -105,8 +103,6 @@ div select {
     border: 1px solid var(--input-border);
     box-sizing: border-box;
     font-size: 1em;
-    background-color: var(--input-background);
-    color: var(--text-color);
 }
 
 /* Estilo da lista de alunos */
@@ -127,7 +123,6 @@ ul li {
     justify-content: space-between;
     align-items: center;
     font-size: 1em;
-    color: var(--text-color);
 }
 
 ul li button {
