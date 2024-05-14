@@ -157,7 +157,7 @@ ul li button:hover {
     right: 20px;
     padding: 12px;
     border: none;
-    border-radius: 50%;
+    border-radius: 15%;
     background-color: var(--primary-color);
     color: var(--secondary-color);
     cursor: pointer;
