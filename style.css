@@ -1,3 +1,6 @@
+/* ESPECIFICAÇÕES DE CADA LINHA EM TODOS */
+
+/* Variáveis de cor */
 :root {
     --primary-color: #007BFF; /* Azul */
     --secondary-color: #000000; /* Preto */
@@ -8,8 +11,9 @@
     --hover-color: #0056b3; /* Azul escuro para hover */
 }
 
+/* Estilo básico do corpo */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: var(--background-color);
     color: var(--secondary-color);
     margin: 0;
@@ -25,22 +29,24 @@ body {
 h1 {
     color: var(--primary-color);
     margin-bottom: 20px;
+    font-size: 2.5em;
 }
 
 /* Estilo do formulário */
 form {
     background-color: var(--input-background);
     border: 1px solid var(--input-border);
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 20px;
-    width: 300px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 form label {
     display: block;
     margin-bottom: 5px;
     color: var(--secondary-color);
+    font-weight: bold;
 }
 
 form input,
@@ -49,15 +55,17 @@ form button {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border-radius: 4px;
+    border-radius: 6px;
     border: 1px solid var(--input-border);
     box-sizing: border-box;
+    font-size: 1em;
 }
 
 form input:focus,
 form select:focus {
     outline: none;
     border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 form button {
@@ -76,13 +84,14 @@ form button:hover {
 /* Estilo da seção de ordenação e pesquisa */
 div {
     margin-top: 20px;
-    width: 300px;
+    width: 350px;
 }
 
 div label {
     display: block;
     margin-bottom: 5px;
     color: var(--secondary-color);
+    font-weight: bold;
 }
 
 div input,
@@ -90,28 +99,30 @@ div select {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border-radius: 4px;
+    border-radius: 6px;
     border: 1px solid var(--input-border);
     box-sizing: border-box;
+    font-size: 1em;
 }
 
 /* Estilo da lista de alunos */
 ul {
     list-style: none;
     padding: 0;
-    width: 300px;
+    width: 350px;
     margin-top: 20px;
 }
 
 ul li {
     background-color: var(--input-background);
     border: 1px solid var(--input-border);
-    border-radius: 4px;
+    border-radius: 6px;
     padding: 10px;
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 1em;
 }
 
 ul li button {
@@ -119,9 +130,9 @@ ul li button {
     color: var(--text-color);
     border: none;
     padding: 5px 10px;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 0.9em;
     margin-left: 5px;
     transition: background-color 0.3s ease;
 }
