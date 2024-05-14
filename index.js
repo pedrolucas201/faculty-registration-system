@@ -79,10 +79,16 @@ function deleteStudent(id) {
     }
 }
 
-themeToggle.addEventListener('click', () => {
-    console.log('Botão de alternar tema clicado');
-    body.classList.toggle('dark-theme');
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-theme');
+        console.log('Theme toggled:', body.classList.contains('dark-theme'));
+    });
 });
+
 
 
 // Evento de envio do formulário
