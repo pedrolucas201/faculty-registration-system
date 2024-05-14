@@ -80,8 +80,10 @@ function deleteStudent(id) {
 }
 
 themeToggle.addEventListener('click', () => {
+    console.log('Botão de alternar tema clicado');
     body.classList.toggle('dark-theme');
 });
+
 
 // Evento de envio do formulário
 studentForm.addEventListener("submit", function(event) {
