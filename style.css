@@ -140,3 +140,15 @@ ul li button {
 ul li button:hover {
     background-color: var(--hover-color);
 }
+
+/* Estilo para o tema claro */
+.light-theme {
+    --background-color: #FFFFFF;
+    --text-color: #000000;
+}
+
+/* Estilo para o tema escuro */
+.dark-theme {
+    --background-color: #121212;
+    --text-color: #FFFFFF;
+}
