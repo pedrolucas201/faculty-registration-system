@@ -1,91 +1,131 @@
+:root {
+    --primary-color: #007BFF; /* Azul */
+    --secondary-color: #000000; /* Preto */
+    --background-color: #F4F4F9; /* Cor de fundo clara */
+    --text-color: #FFFFFF; /* Cor do texto para botões */
+    --input-background: #FFFFFF; /* Cor de fundo dos inputs */
+    --input-border: #CCCCCC; /* Cor da borda dos inputs */
+    --hover-color: #0056b3; /* Azul escuro para hover */
+}
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #fff;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
+/* Estilo do título */
 h1 {
-    text-align: center;
-    margin-top: 20px;
-}
-
-form {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 20px;
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
-form input[type="text"],
-form input[type="number"],
-form input[type="date"],
-form select {
-     width: calc(100% - 20px);
+/* Estilo do formulário */
+form {
+    background-color: var(--input-background);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--secondary-color);
+}
+
+form input,
+form select,
+form button {
+    width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
+    margin-bottom: 15px;
     border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
+    border: 1px solid var(--input-border);
+    box-sizing: border-box;
+}
+
+form input:focus,
+form select:focus {
+    outline: none;
+    border-color: var(--primary-color);
 }
 
 form button {
-     width: calc(100% - 20px);
-    padding: 10px;
-    background-color: #3498db;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     border: none;
-    border-radius: 4px;
     cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
+form button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Estilo da seção de ordenação e pesquisa */
 div {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 300px;
 }
 
 div label {
-    font-weight: bold;
-    color: #fff;
+    display: block;
+    margin-bottom: 5px;
+    color: var(--secondary-color);
 }
 
-div select,
-div input[type="text"] {
-    margin-right: 10px;
+div input,
+div select {
+    width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    margin-bottom: 15px;
     border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
+    border: 1px solid var(--input-border);
+    box-sizing: border-box;
 }
 
+/* Estilo da lista de alunos */
 ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
+    width: 300px;
+    margin-top: 20px;
 }
 
 ul li {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    background-color: var(--input-background);
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
     padding: 10px;
     margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 ul li button {
-    background-color: #e74c3c;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     border: none;
-    border-radius: 4px;
     padding: 5px 10px;
-    margin-left: 10px;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 14px;
+    margin-left: 5px;
+    transition: background-color 0.3s ease;
 }
 
-ul li button.edit {
-    background-color: #3498db;
+ul li button:hover {
+    background-color: var(--hover-color);
 }
