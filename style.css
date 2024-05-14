@@ -10,7 +10,7 @@
 }
 
 /* Variáveis de cor para o tema escuro */
-:root.dark-theme {
+body.dark-theme {
     --primary-color: #0056b3; /* Azul escuro */
     --secondary-color: #FFFFFF; /* Branco */
     --background-color: #121212; /* Fundo escuro */
@@ -68,6 +68,8 @@ form button {
     border: 1px solid var(--input-border);
     box-sizing: border-box;
     font-size: 1em;
+    background-color: var(--input-background);
+    color: var(--text-color);
 }
 
 form input:focus,
@@ -112,6 +114,8 @@ div select {
     border: 1px solid var(--input-border);
     box-sizing: border-box;
     font-size: 1em;
+    background-color: var(--input-background);
+    color: var(--text-color);
 }
 
 /* Estilo da lista de alunos */
@@ -132,6 +136,7 @@ ul li {
     justify-content: space-between;
     align-items: center;
     font-size: 1em;
+    color: var(--text-color);
 }
 
 ul li button {
