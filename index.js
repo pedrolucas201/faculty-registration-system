@@ -12,7 +12,7 @@ const searchInput = document.getElementById("search");
 // Função para adicionar um aluno
 function addStudent(name, age, course, cpf, birthdate) {
     const studentId = studentIdCounter++;
-    students.push({ id: studentId, name, age, course, cpf,birthdate });
+    students.push({ id: studentId, name, age, course, cpf, birthdate });
     renderStudents();
 }
 
@@ -20,13 +20,13 @@ function addStudent(name, age, course, cpf, birthdate) {
 function renderStudents() {
     const sortCriteria = sortSelect.value;
     const searchString = searchInput.value.toLowerCase();
-        
+
     // Filtrar e ordenar os alunos
     const filteredStudents = students.filter(student => {
         return student.name.toLowerCase().includes(searchString) ||
-                student.course.toLowerCase().include(searchString) ||
-                student.cpf.includes(searchString) ||
-                student.birthdate.includes(searchString);
+            student.course.toLowerCase().includes(searchString) ||
+            student.cpf.includes(searchString) ||
+            student.birthdate.includes(searchString);
     }).sort((a, b) => {
         if (a[sortCriteria] < b[sortCriteria]) return -1;
         if (a[sortCriteria] > b[sortCriteria]) return 1;
@@ -36,29 +36,42 @@ function renderStudents() {
     studentList.innerHTML = "";
     filteredStudents.forEach(student => {
         const li = document.createElement("li");
-        li.innerHTML = `Matrícula: ${student.id} - ${student.name}- ${student.age} anos - Curso: ${student.course} - CPF: {student.cpf} - Data de Nascimento: ${student.birthdate}<button onclick="editStudent('${student.name}')"class="edit">Editar</button> <button onclick="deleteStuden('${student.name}')">Excluir</button>`;
+        li.innerHTML = `Matrícula: ${student.id} - ${student.name} - ${student.age} anos - Curso: ${student.course} - CPF: ${student.cpf} - Data de Nascimento: ${student.birthdate} 
+            <button onclick="editStudent(${student.id})" class="edit">Editar</button> 
+            <button onclick="deleteStudent(${student.id})">Excluir</button>`;
         studentList.appendChild(li);
     });
 }
 
- // Função para editar um aluno
-function editStudent(name) {
-    const index = students.findIndex(student => student.name ===name);
-    const newName = prompt("Novo nome:");
-    const newAge = prompt("Nova idade:");
-    const newCourse = prompt("Novo curso:");
-    const newBirthdate = prompt("Nova data de nascimento:");
-    students[index].name = newName;
-    students[index].age = newAge;
-    students[index].course = newCourse;
-    students[index].birthdate = newBirthdate;
-    renderStudents();
+// Função para editar um aluno
+function editStudent(id) {
+    const index = students.findIndex(student => student.id === id);
+    if (index !== -1) {
+        const student = students[index];
+        const newName = prompt("Novo nome:", student.name);
+        const newAge = prompt("Nova idade:", student.age);
+        const newCourse = prompt("Novo curso:", student.course);
+        const newCpf = prompt("Novo CPF:", student.cpf);
+        const newBirthdate = prompt("Nova data de nascimento:", student.birthdate);
+
+        if (newName && newAge && newCourse && newCpf && newBirthdate) {
+            students[index] = {
+                ...student,
+                name: newName,
+                age: newAge,
+                course: newCourse,
+                cpf: newCpf,
+                birthdate: newBirthdate
+            };
+            renderStudents();
+        }
+    }
 }
 
 // Função para excluir um aluno
-function deleteStudent(name) {
-    if (confirm(`Tem certeza que deseja excluir o aluno ${name}?`)){
-        const index = students.findIndex(student => student.name=== name);
+function deleteStudent(id) {
+    const index = students.findIndex(student => student.id === id);
+    if (index !== -1 && confirm(`Tem certeza que deseja excluir o aluno ${students[index].name}?`)) {
         students.splice(index, 1);
         renderStudents();
     }
@@ -72,13 +85,15 @@ studentForm.addEventListener("submit", function(event) {
     const course = document.getElementById("course").value;
     const cpf = document.getElementById("cpf").value;
     const birthdate = document.getElementById("birthdate").value;
-    addStudent(name, age, course, cpf, birthdate);
-     // Limpar os campos do formulário após adicionar um aluno
-    document.getElementById("name").value = "";
-    document.getElementById("age").value = "";
-    document.getElementById("course").value = "";
-     document.getElementById("cpf").value = "";
-    document.getElementById("birthdate").value = "";
+
+    if (name && age && course && cpf && birthdate) {
+        addStudent(name, age, course, cpf, birthdate);
+
+        // Limpar os campos do formulário após adicionar um aluno
+        studentForm.reset();
+    } else {
+        alert("Por favor, preencha todos os campos.");
+    }
 });
 
 // Evento de alteração de critério de ordenação e busca
