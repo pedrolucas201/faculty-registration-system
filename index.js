@@ -8,7 +8,8 @@ const studentForm = document.getElementById("studentForm");
 const studentList = document.getElementById("studentList");
 const sortSelect = document.getElementById("sort");
 const searchInput = document.getElementById("search");
-const toggleSwitch = document.getElementById('toggle-theme');
+const themeToggle = document.getElementById('theme-toggle');
+
 
 // Função para adicionar um aluno
 function addStudent(name, age, course, cpf, birthdate) {
@@ -78,15 +79,11 @@ function deleteStudent(id) {
     }
 }
 
-function switchTheme(e) {
-    if (e.target.checked) {
-        document.body.classList.add('dark-theme');
-    } else {
-        document.body.classList.remove('dark-theme');
-    }
+function switchTheme() {
+    document.body.classList.toggle('dark-theme');
 }
 
-toggleSwitch.addEventListener('change', switchTheme, false);
+themeToggle.addEventListener('click', switchTheme);
 
 // Evento de envio do formulário
 studentForm.addEventListener("submit", function(event) {
